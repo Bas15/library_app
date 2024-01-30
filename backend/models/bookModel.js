@@ -7,15 +7,15 @@ const bookSchema = mongoose.Schema({
     },
     type : {
         type: string,
-        required: true
+        required: [true, 'please add a text value' ]
     },
     desc : {
         type: string,
-        required: true
+        required: [true, 'please add a text value' ]
     },
     cover : {
         type: string,
-        reqiured: true
+        reqiured: [true, 'please add a text value' ]
     }
 }) 
 
