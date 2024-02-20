@@ -1,23 +1,28 @@
 const mongoose = require("mongoose")
 
 const bookSchema = mongoose.Schema({
-    id : {
-        type: int,
-        required: true
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User',
     },
-    type : {
-        type: string,
+    genre : {
+        type: String,
         required: [true, 'please add a text value' ]
     },
     desc : {
-        type: string,
+        type: String,
         required: [true, 'please add a text value' ]
     },
     cover : {
-        type: string,
-        reqiured: [true, 'please add a text value' ]
+        type: String,
+        required: [true, 'please add a text value' ]
+    },
+    },
+    {
+        timestamps: true
     }
-}) 
+) 
 
 
-module.exports = bookSchema
+module.exports = mongoose.model('Book', bookSchema)
